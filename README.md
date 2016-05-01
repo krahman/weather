@@ -11,5 +11,5 @@ $ npm install
 ```
 * Run project
 ```bash
-* npm run server:live
+* npm start
 ```

@@ -4,8 +4,6 @@
   "description": "weather app ",
   "scripts": {
     "start": "node server.js",
-    "server:live": "webpack --progress --colors && live-server",
-    "server:dev": "webpack-dev-server --progress --colors"
   },
   "keywords": [
     "weather"
