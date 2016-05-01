@@ -1,2 +1,5 @@
 # ignore node folder
 node_modules
+
+# ignore sublime folder
+.DS_Store

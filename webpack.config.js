@@ -1,15 +1,22 @@
+var webpack = require('webpack');
+
 module.exports = {
-    entry: "./index.js",
+    entry: [
+        "webpack-dev-server/client?http://localhost:1337",
+        "webpack/hot/dev-server",
+        "./src/index"
+    ],
     output: {
         path: __dirname,
-        filename: "bundle/app.bundle.js"
+        filename: "app.bundle.js",
+        publicPath: "/bundle/"
     },
     module: {
         loaders: [
             { 
                 test: /.jsx?$/, 
                 loader: 'babel-loader', 
-                exclude: [/node_modules/],
+                exclude: [/node_modules/, /bundle/],
                 query: {
                     presets: ['es2015', 'react']
                 }
@@ -19,5 +26,9 @@ module.exports = {
                 loader: "style-loader!css-loader"
             }
         ]
-    }
+    },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin()
+    ]
 };
