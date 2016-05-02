@@ -1,13 +1,9 @@
-.container-title {
+.container {
 	text-align: center;
 }
 .search-bar {
 	text-align: center;
 }
 .form-group {
-	width: 50%;
 	padding-right: 4px;
-}
-.form-group .form-control {
-	width: 100%;
 }
