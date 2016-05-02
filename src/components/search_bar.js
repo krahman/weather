@@ -1,6 +1,9 @@
 import React from 'react';
 import { Component } from 'react';
 
+import CountryList from './country_list';
+import CityInput from './city_input';
+
 export default class SearchBar extends Component {
 	constructor(props) {
 		
@@ -36,28 +39,8 @@ export default class SearchBar extends Component {
 		return (
 			<div className="search-bar">
 				<form className="form-inline" onSubmit={this.onFormSubmit}>
-					<div className="form-group country-list">
-				    	<div className="input-group">
-				      		<div className="input-group-addon">Country</div>
-				      		<input 
-				      			type="text" 
-				      			value={this.state.country}
-				      			onChange={this.onCountryInputChange}
-				      			className="form-control" 
-			      			/>
-				    	</div>
-				  	</div>
-					<div className="form-group city-bar">
-				    	<div className="input-group">
-				      		<div className="input-group-addon">City</div>
-				      		<input 
-								type="text"
-								value={this.state.city}
-								onChange={this.onCityInputChange}
-								className="form-control"
-							/>
-				    	</div>
-				  	</div>
+					<CountryList country={this.state.country} onCountryInputChange={this.onCountryInputChange}/>
+					<CityInput city={this.state.city} onCityInputChange={this.onCityInputChange}/>
 					<div className="form-group">
 						<div className="input-group">
 							<button 
